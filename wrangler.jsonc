@@ -1,0 +1,11 @@
+{
+  // Cloudflare Workers（静的アセット配信）の設定。
+  // ビルドで生成した dist/ をそのまま配信する「アセットのみ Worker」。
+  // name はダッシュボードのプロジェクト名と一致させる（= 公開URLのサブドメイン）。
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "akiya-kanagawa",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": "./dist"
+  }
+}
