@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# サイトマップ（公開ドメインに合わせて自動生成されます）
+Sitemap: https://akiya-kanagawa.wrapupmylife.workers.dev/sitemap-index.xml

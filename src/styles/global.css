@@ -1,0 +1,81 @@
+/* =============================================================
+   デザイントークン
+   主題: 空き家活用・管理（神奈川）。読者は実家の空き家を持つ家族。
+   方針: 落ち着き・信頼・前向きさ。「再生・活用」を温かみのある色で表現。
+   配色: 深いティール（信頼）× テラコッタ（活用・再生）× 温かい生成り白。
+   書体: 見出しに明朝（品位）、本文にゴシック（可読性・配慮）。
+   ============================================================= */
+:root {
+  --paper: #faf7f1;      /* 温かみのある生成り白 */
+  --paper-deep: #efe9df; /* セクション区切りの少し濃い紙 */
+  --ink: #2a2622;        /* 焦茶に近い墨: 見出し・本文 */
+  --ink-soft: #6c6258;   /* 補助テキスト */
+  --ai: #15615e;         /* 深いティール: リンク・信頼の主役色 */
+  --sei: #c66236;        /* テラコッタ: 活用・再生のアクセント */
+  --sei-deep: #a84e28;
+  --line: #e7ddcd;       /* 罫線 */
+  --pr: #8a7a55;         /* 広告/PRバッジ（落ち着いた灰茶） */
+  --pr-bg: #f1ece0;
+
+  --max: 880px;
+  --radius: 6px;
+  --font-serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-sans: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.5; }
+h1 { font-size: clamp(1.7rem, 5vw, 2.5rem); letter-spacing: 0.02em; }
+h2 { font-size: clamp(1.3rem, 3.5vw, 1.7rem); margin-top: 2.4em; }
+h3 { font-size: 1.2rem; margin-top: 1.8em; }
+
+a { color: var(--ai); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--ink); }
+
+:focus-visible { outline: 2px solid var(--ai); outline-offset: 2px; }
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  color: var(--sei-deep);
+  font-weight: 700;
+}
+
+.muted { color: var(--ink-soft); font-size: 0.92rem; }
+.lead { font-size: 1.05rem; color: var(--ink-soft); max-width: 40em; }
+
+.btn {
+  display: inline-block;
+  background: var(--ai);
+  color: #fff;
+  padding: 0.7em 1.4em;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.98rem;
+}
+.btn:hover { background: var(--ink); color: #fff; }
+.btn--sei { background: var(--sei-deep); }
+.btn--sei:hover { background: var(--ink); }
+
+.section { padding: 56px 0; }
+.section--deep { background: var(--paper-deep); }
