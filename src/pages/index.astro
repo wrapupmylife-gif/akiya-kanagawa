@@ -88,18 +88,29 @@ const faqJsonLd = {
     </ul>
   </section>
 
-  <!-- 新着記事のお知らせ（最新の公開記事を自動表示） -->
-  {latest[0] && (
-    <div class="wrap">
-      <a class="news-bar" href={`/articles/${latest[0].slug}/`}>
-        <span class="news-badge">新着記事</span>
-        <time class="news-date" datetime={latest[0].data.publishedAt}>
-          {latest[0].data.publishedAt.replaceAll("-", ".")}
-        </time>
-        <span class="news-title">{latest[0].data.title}</span>
-        <span class="news-arrow" aria-hidden="true">→</span>
-      </a>
-    </div>
+  <!-- 新着記事のお知らせ（最新の公開記事を日付順で自動表示） -->
+  {latest.length > 0 && (
+    <section class="wrap news-section" aria-label="新着記事のお知らせ">
+      <div class="news-head">
+        <span class="news-badge">新着</span>
+        <h2 class="news-h">新着記事のお知らせ</h2>
+      </div>
+      <ul class="news-list">
+        {latest.slice(0, 3).map((a) => (
+          <li>
+            <a href={`/articles/${a.slug}/`}>
+              <time class="news-date" datetime={a.data.publishedAt}>
+                {a.data.publishedAt.replaceAll("-", ".")}
+              </time>
+              <span class="news-cat">{a.data.category}</span>
+              <span class="news-title">{a.data.title}</span>
+              <span class="news-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p class="news-more"><a href="/articles/">記事一覧を見る →</a></p>
+    </section>
   )}
 
   <!-- トップ広告枠（有料掲載・PR表記つき） -->
@@ -192,29 +203,36 @@ const faqJsonLd = {
   .choices .ttl { display: block; font-family: var(--font-serif); font-size: 1.08rem; color: var(--ink); font-weight: 700; margin: 6px 0 4px; }
   .choices .sub { display: block; font-size: .82rem; color: var(--ink-soft); }
 
-  /* 新着記事バー */
-  .news-bar {
-    display: flex; align-items: center; gap: 14px;
-    padding: 14px 18px; margin: 4px 0 8px;
-    background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
-    text-decoration: none; transition: border-color 0.15s, box-shadow 0.15s;
-  }
-  .news-bar:hover { border-color: var(--sei); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  /* 新着記事のお知らせ欄 */
+  .news-section { margin: 12px auto 0; }
+  .news-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
   .news-badge {
-    flex: none;
-    background: var(--sei); color: #fff;
+    flex: none; background: var(--sei); color: #fff;
     font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
     padding: 4px 10px; border-radius: 999px;
   }
-  .news-date { flex: none; font-size: 0.82rem; color: var(--ink-soft); }
+  .news-h { margin: 0; font-size: 1.1rem; }
+  .news-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .news-list li { border-bottom: 1px solid var(--line); }
+  .news-list a {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 4px; text-decoration: none; transition: background 0.15s;
+  }
+  .news-list a:hover { background: var(--paper-deep); }
+  .news-date { flex: none; font-size: 0.82rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+  .news-cat {
+    flex: none; font-size: 0.7rem; color: var(--sei-deep); font-weight: 700;
+    border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px;
+  }
   .news-title {
     flex: 1 1 auto; min-width: 0;
-    color: var(--ink); font-weight: 700; font-size: 0.96rem;
+    color: var(--ink); font-weight: 700; font-size: 0.95rem;
     overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
   .news-arrow { flex: none; color: var(--sei); font-weight: 700; }
+  .news-more { margin: 12px 0 0; font-size: 0.9rem; }
   @media (max-width: 560px) {
-    .news-bar { flex-wrap: wrap; gap: 8px 12px; }
+    .news-list a { flex-wrap: wrap; gap: 6px 10px; }
     .news-title { flex-basis: 100%; white-space: normal; }
   }
 
