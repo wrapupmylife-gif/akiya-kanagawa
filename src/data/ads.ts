@@ -34,7 +34,7 @@ export const ads: Ad[] = [
     body: "神奈川県全域の空き家の管理・活用・売却をワンストップでサポート。",
     ctaLabel: "無料で相談・査定を依頼する",
     href: "https://example.com/lp?utm_source=akiya-guide&utm_medium=ad&utm_campaign=top",
-    active: true,
+    active: false,
   },
   {
     id: "ad-article-001",
@@ -44,7 +44,7 @@ export const ads: Ad[] = [
     body: "巡回・換気・通水・外観点検つきの管理プランをご案内します。",
     ctaLabel: "管理プランの相談をする",
     href: "https://example.com/lp?utm_source=akiya-guide&utm_medium=ad&utm_campaign=article",
-    active: true,
+    active: false,
   },
 
   // --- 各エリア比較表の直下に出る広告枠（サンプル） ---
@@ -59,7 +59,7 @@ export const ads: Ad[] = [
     body: "横浜市・川崎市の空き家を、定期巡回から売却・活用までサポートします。",
     ctaLabel: "このエリアで無料相談する",
     href: "https://example.com/lp?utm_source=akiya-guide&utm_medium=ad&utm_campaign=area-yokohama",
-    active: true,
+    active: false,
   },
   {
     id: "ad-area-miura",
@@ -70,7 +70,7 @@ export const ads: Ad[] = [
     body: "横須賀・三浦・逗子・葉山の塩害対策や別荘の遠隔管理にも対応。",
     ctaLabel: "このエリアで無料相談する",
     href: "https://example.com/lp?utm_source=akiya-guide&utm_medium=ad&utm_campaign=area-miura",
-    active: true,
+    active: false,
   },
   {
     id: "ad-area-shonan",
@@ -81,7 +81,7 @@ export const ads: Ad[] = [
     body: "鎌倉・藤沢・茅ヶ崎・平塚の空き家を、管理から賃貸活用までサポート。",
     ctaLabel: "このエリアで無料相談する",
     href: "https://example.com/lp?utm_source=akiya-guide&utm_medium=ad&utm_campaign=area-shonan",
-    active: true,
+    active: false,
   },
   {
     id: "ad-area-kenou",
@@ -92,7 +92,7 @@ export const ads: Ad[] = [
     body: "県央エリアの空き家の管理・除草・解体・売却に対応。お見積りは無料です。",
     ctaLabel: "このエリアで無料相談する",
     href: "https://example.com/lp?utm_source=akiya-guide&utm_medium=ad&utm_campaign=area-kenou",
-    active: true,
+    active: false,
   },
   {
     id: "ad-area-seisho",
@@ -103,7 +103,7 @@ export const ads: Ad[] = [
     body: "別荘地・遠隔地の空き家も定期管理。古民家の活用・売却もご相談ください。",
     ctaLabel: "このエリアで無料相談する",
     href: "https://example.com/lp?utm_source=akiya-guide&utm_medium=ad&utm_campaign=area-seisho",
-    active: true,
+    active: false,
   },
 ];
 
