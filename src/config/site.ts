@@ -59,7 +59,7 @@ export const site = {
   contactForm: "https://example.com/contact",
   // 運営者情報（運営者ページ・フッターに表示）
   operator: {
-    name: "かながわ住まい活用ナビ",
+    name: "かながわ終活ナビ",
     contact: "contact@example.com",
   },
 } as const;
