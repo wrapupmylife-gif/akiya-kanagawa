@@ -56,7 +56,8 @@ export const site = {
   ],
   // お問い合わせ・広告掲載の依頼フォーム（Googleフォーム等）。
   // メールアドレスは公開せず、このフォームに誘導する。
-  contactForm: "https://example.com/contact",
+  contactForm:
+    "https://docs.google.com/forms/d/e/1FAIpQLSeNELHHhaMbsClbbCgLsMXxe0JRYfnWb-Z8MrkXZiddEsLGqg/viewform",
   // 運営者情報（運営者ページ・フッターに表示）
   operator: {
     name: "かながわ終活ナビ",
