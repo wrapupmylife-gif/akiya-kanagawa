@@ -1,10 +1,40 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
-// ★公開前に必ず site を実際のドメインに変更してください。
-//   sitemap.xml・canonical・OGP の絶対URLがこの値を基準に生成されます。
+// =============================================================
+// kanagawa-shukatsu.com のサブディレクトリ /akiya/ で公開する構成。
+// - site + base から sitemap.xml・canonical・OGP の絶対URLが生成される
+// - outDir を dist/akiya にして、Cloudflare Workers の静的アセット
+//   （アセットディレクトリ = dist）がそのまま /akiya/* のURLに一致する
+// - 記事(.md)内のルート相対リンクはビルド時に base を自動付与（下のプラグイン）
+// =============================================================
+
+const BASE = "/akiya";
+
+function rehypePrefixInternalLinks() {
+  const walk = (node) => {
+    if (node.type === "element" && node.tagName === "a") {
+      const href = node.properties?.href;
+      if (
+        typeof href === "string" &&
+        href.startsWith("/") &&
+        !href.startsWith("//") &&
+        !href.startsWith(`${BASE}/`) &&
+        href !== BASE
+      ) {
+        node.properties.href = BASE + href;
+      }
+    }
+    if (node.children) node.children.forEach(walk);
+  };
+  return (tree) => walk(tree);
+}
+
 export default defineConfig({
-  site: "https://akiya-kanagawa.wrapupmylife.workers.dev",
+  site: "https://kanagawa-shukatsu.com",
+  base: BASE,
+  outDir: `./dist${BASE}`,
+  trailingSlash: "ignore",
   integrations: [
     sitemap({
       // noindex のページ（プライバシーポリシー等）は sitemap から除外
@@ -13,6 +43,9 @@ export default defineConfig({
       priority: 0.7,
     }),
   ],
+  markdown: {
+    rehypePlugins: [rehypePrefixInternalLinks],
+  },
   build: {
     inlineStylesheets: "auto",
   },

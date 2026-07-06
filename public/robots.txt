@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# サイトマップ（公開ドメインに合わせて自動生成されます）
-Sitemap: https://akiya-kanagawa.wrapupmylife.workers.dev/sitemap-index.xml
+# 本サイトは kanagawa-shukatsu.com/akiya/ のサブディレクトリで公開。
+Sitemap: https://kanagawa-shukatsu.com/akiya/sitemap-index.xml
