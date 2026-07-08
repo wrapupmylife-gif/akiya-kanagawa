@@ -7,5 +7,9 @@
   "compatibility_date": "2025-06-01",
   "assets": {
     "directory": "./dist"
-  }
+  },
+  // routes によりデプロイ時に kanagawashukatsu.com/akiya* が自動でこのWorkerに割り当たる。
+  "routes": [
+    { "pattern": "kanagawashukatsu.com/akiya*", "zone_name": "kanagawashukatsu.com" }
+  ]
 }

@@ -98,7 +98,7 @@ const faqJsonLd = {
       <ul class="news-list">
         {latest.slice(0, 3).map((a) => (
           <li>
-            <a href={`/articles/${a.slug}/`}>
+            <a href={`/akiya/articles/${a.slug}/`}>
               <time class="news-date" datetime={a.data.publishedAt}>
                 {a.data.publishedAt.replaceAll("-", ".")}
               </time>
@@ -109,7 +109,7 @@ const faqJsonLd = {
           </li>
         ))}
       </ul>
-      <p class="news-more"><a href="/articles/">記事一覧を見る →</a></p>
+      <p class="news-more"><a href="/akiya/articles/">記事一覧を見る →</a></p>
     </section>
   )}
 
@@ -165,7 +165,7 @@ const faqJsonLd = {
       <ul class="cards">
         {latest.map((a) => (
           <li>
-            <a href={`/articles/${a.slug}/`}>
+            <a href={`/akiya/articles/${a.slug}/`}>
               <span class="cat">{a.data.category}</span>
               <span class="ttl">{a.data.title}</span>
               <span class="muted">{a.data.description}</span>
@@ -173,7 +173,7 @@ const faqJsonLd = {
           </li>
         ))}
       </ul>
-      <p style="margin-top:24px"><a href="/articles/">記事一覧を見る →</a></p>
+      <p style="margin-top:24px"><a href="/akiya/articles/">記事一覧を見る →</a></p>
     </div>
   </section>
 
