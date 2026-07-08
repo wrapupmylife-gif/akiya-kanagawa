@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# 本サイトは kanagawa-shukatsu.com/akiya/ のサブディレクトリで公開。
-Sitemap: https://kanagawa-shukatsu.com/akiya/sitemap-index.xml
+# 本サイトは kanagawashukatsu.com/akiya/ のサブディレクトリで公開。
+Sitemap: https://kanagawashukatsu.com/akiya/sitemap-index.xml

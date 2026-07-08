@@ -17,7 +17,7 @@ export const site = {
   // Google アナリティクス(GA4) の測定ID（例: "G-XXXXXXXXXX"）。空なら計測なし。
   gaId: "",
   // 公開URL（astro.config.mjs の site と揃える）
-  url: "https://kanagawa-shukatsu.com/akiya",
+  url: "https://kanagawashukatsu.com/akiya",
   // 対応エリア（記事・比較表の絞り込みやSEOの軸に使う）
   area: "神奈川県",
   // 対応エリアは下記の区分に分けて扱う（比較表・導線の軸）。

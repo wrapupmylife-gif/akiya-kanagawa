@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
 // =============================================================
-// kanagawa-shukatsu.com のサブディレクトリ /akiya/ で公開する構成。
+// kanagawashukatsu.com のサブディレクトリ /akiya/ で公開する構成。
 // - site + base から sitemap.xml・canonical・OGP の絶対URLが生成される
 // - outDir を dist/akiya にして、Cloudflare Workers の静的アセット
 //   （アセットディレクトリ = dist）がそのまま /akiya/* のURLに一致する
@@ -31,7 +31,7 @@ function rehypePrefixInternalLinks() {
 }
 
 export default defineConfig({
-  site: "https://kanagawa-shukatsu.com",
+  site: "https://kanagawashukatsu.com",
   base: BASE,
   outDir: `./dist${BASE}`,
   trailingSlash: "ignore",
